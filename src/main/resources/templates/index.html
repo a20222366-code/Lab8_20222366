@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head th:insert="base :: head(index)">
 </head>
 
 <body>
 
-<div id="container" align="center" style="width: 100px">
+<div id="container" align="center" style="width: 450px; margin: 0 auto;">
     <h3>Ingrese sus Datos</h3>
     <br>
     <form  th:action="@{/processlogin}" method="post">
@@ -13,18 +13,14 @@
             <h5 th:if="${param.error}" class="alert alert-danger" style="color:red">Acceso Denegado</h5>
         </div>
         <label>Ingrese su Correo</label>
-        <div class="container">
-            <input type="text" class="form-control" placeholder="username" aria-label="username" aria-describedby="addon-wrapping" name="username">
-        </div>
+        <!-- Se quitaron los divs internos que causaban conflicto con el tamaño -->
+        <input type="text" class="form-control" placeholder="username" aria-label="username" aria-describedby="addon-wrapping" name="username">
         <br>
         <label>Ingrese su Contrasena</label>
-        <div class="container">
-            <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="addon-wrapping" name="password">
-        </div>
+        <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="addon-wrapping" name="password">
         <br>
         <input type="submit" class="btn btn-info btn-block" value="Iniciar Sesion">
     </form>
 </div>
 </body>
 </html>
-
