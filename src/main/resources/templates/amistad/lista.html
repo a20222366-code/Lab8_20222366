@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head('Mis solicitudes')"></head>
+<body>
+<nav th:replace="base :: navbar"></nav>
+
+<div class="container mt-3">
+    <h3>Solicitudes enviadas</h3>
+    <table class="table table-sm">
+        <tr><th>Para</th><th>Estado</th></tr>
+        <tr th:each="s : ${enviadas}">
+            <td th:text="${s.receptor.firstname + ' ' + s.receptor.lastname}"></td>
+            <td th:text="${s.estado}"></td>
+        </tr>
+    </table>
+
+    <h3>Solicitudes recibidas</h3>
+    <table class="table table-sm">
+        <tr><th>De</th><th>Estado</th></tr>
+        <tr th:each="s : ${recibidas}">
+            <td th:text="${s.emisor.firstname + ' ' + s.emisor.lastname}"></td>
+            <td th:text="${s.estado}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

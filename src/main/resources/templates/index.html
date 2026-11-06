@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="base :: head(index)">
+</head>
+
+<body>
+
+<div id="container" align="center" style="width: 100px">
+    <h3>Ingrese sus Datos</h3>
+    <br>
+    <form  th:action="@{/processlogin}" method="post">
+        <div align="center">
+            <h5 th:if="${param.error}" class="alert alert-danger" style="color:red">Acceso Denegado</h5>
+        </div>
+        <label>Ingrese su Correo</label>
+        <div class="container">
+            <input type="text" class="form-control" placeholder="username" aria-label="username" aria-describedby="addon-wrapping" name="username">
+        </div>
+        <br>
+        <label>Ingrese su Contrasena</label>
+        <div class="container">
+            <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="addon-wrapping" name="password">
+        </div>
+        <br>
+        <input type="submit" class="btn btn-info btn-block" value="Iniciar Sesion">
+    </form>
+</div>
+</body>
+</html>
+
